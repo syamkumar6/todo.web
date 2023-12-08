@@ -44,7 +44,7 @@ function LoginPage() {
         initialValues: initialValues,
         validationSchema: SignInSchema,
         onSubmit:(values) => {
-           axios.post(`${baseURL}/users/login`,({values}))
+           axios.post(`${baseURL}/users/login`,({values}), {timeout:15000})
            .then(res => {
             if(res.data.Status === "success"){
                 navigate('/todos'); 
