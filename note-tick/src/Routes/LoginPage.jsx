@@ -44,7 +44,6 @@ function LoginPage() {
         initialValues: initialValues,
         validationSchema: SignInSchema,
         onSubmit:(values) => {
-           axiosInstance.defaults.withCredentials = true
            axios.post(`${baseURL}/users/login`,({values}))
            .then(res => {
             if(res.data.Status === "success"){
