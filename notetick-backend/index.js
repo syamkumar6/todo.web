@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(
     cors({
       origin: "https://notetick-t.vercel.app",
-      methods: '*',
+      methods: ["POST","GET","DELETE"],
       credentials: true,
     })
   );
