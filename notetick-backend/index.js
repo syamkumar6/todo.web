@@ -1,4 +1,3 @@
-
 const express = require('express')
 const mongoose = require('mongoose');
 require('dotenv').config()
@@ -15,7 +14,7 @@ app.use(cookieParses());
 app.use(express.json());
 app.use(
     cors({
-      origin: "https://notetick-t.vercel.app",
+      origin: ["http://localhost:5173" , "https://notetick-t.vercel.app"],
       methods: ["POST","GET","DELETE"],
       credentials: true,
     })

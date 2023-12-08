@@ -20,10 +20,8 @@ router.post('/sign-up', async (req, res, next) => {
 })
 
 router.post('/login', async (req, res, next) => {
-  console.log("hi")
     try{
         const user = await Users.findOne({email: req.body.values.email})
-        db.setProfilingLevel(2);
         if(user.length === 0) {
             return res.status(501).json({Message:"No Records existed"})
         } 
@@ -33,7 +31,6 @@ router.post('/login', async (req, res, next) => {
         } else{
             const token = jwt.sign({user:{id: user._id, name:user.name, email:user.email}}, process.env.JWT_KEY, { expiresIn: "1d" });
             res.cookie('token', token)
-            db.setProfilingLevel(0);
             return res.json({Status:"success"})
         }
         
