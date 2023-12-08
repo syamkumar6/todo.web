@@ -1,0 +1,1 @@
+<div className='h-screen absolute top-0 left-0'style={{backgroundImage:"url('https://media.licdn.com/dms/image/C4E12AQF7PdhwKav10A/article-cover_image-shrink_720_1280/0/1595926906422?e=1707350400&v=beta&t=WUxDWJ-UDY6ePafYHJ8rP3bduoC2u7-5rLWCeOSoKMo')",}}></div>
