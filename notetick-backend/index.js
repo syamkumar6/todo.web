@@ -15,7 +15,7 @@ app.use(cookieParses());
 app.use(express.json());
 app.use(
     cors({
-      origin: "*",
+      origin: "https://notetick-t.vercel.app",
       methods: '*',
       credentials: true,
     })
