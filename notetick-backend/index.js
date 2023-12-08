@@ -20,12 +20,7 @@ app.use(
       credentials: true,
     })
   );
-  app.options('*', cors());
-app.use((req, res, next) => {
-  const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  console.log('Client IP Address:', ipAddress);
-  next();
-});
+
 
 app.use("/users", UserRouter)
 app.use("/todos", TodoRouter)
