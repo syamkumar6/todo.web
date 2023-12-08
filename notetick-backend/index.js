@@ -15,11 +15,12 @@ app.use(cookieParses());
 app.use(express.json());
 app.use(
     cors({
-      origin: ["https://notetick-t-mqiqh7ju6-syam-kumars-projects.vercel.app/"],
-      methods: ["POST, GET, DELETE"],
+      origin: ["https://notetick-t-mqiqh7ju6-syam-kumars-projects.vercel.app"],
+      methods: '*',
       credentials: true,
     })
   );
+  app.options('*', cors());
 app.use((req, res, next) => {
   const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   console.log('Client IP Address:', ipAddress);
