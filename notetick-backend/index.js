@@ -15,7 +15,7 @@ app.use(cookieParses());
 app.use(express.json());
 app.use(
     cors({
-      origin: ["https://notetick-t-syam-kumars-projects.vercel.app"],
+      origin: ["https://notetick-t-mqiqh7ju6-syam-kumars-projects.vercel.app"],
       methods: '*',
       credentials: true,
     })
