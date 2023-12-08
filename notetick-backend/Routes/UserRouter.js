@@ -20,6 +20,7 @@ router.post('/sign-up', async (req, res, next) => {
 })
 
 router.post('/login', async (req, res, next) => {
+  console.log("hi")
     try{
         const user = await Users.findOne({email: req.body.values.email})
         if(user.length === 0) {
