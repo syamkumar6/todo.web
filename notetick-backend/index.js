@@ -35,6 +35,6 @@ async function main() {
     const db_url = process.env.DB_URL 
     const urlWithPassword = db_url.replace("<password>", process.env.DB_PASSWORD)
   await mongoose.connect(urlWithPassword);
-
+console.log(urlWithPassword)
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
