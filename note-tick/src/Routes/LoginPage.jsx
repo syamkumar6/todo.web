@@ -22,6 +22,10 @@ function LoginPage() {
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const baseURL = import.meta.env.VITE_BASE_URL
+    const axiosInstance = axios.create({
+        baseURL: baseURL,
+        timeout: 15000, 
+      });
 
     axios.defaults.withCredentials = true
       useEffect(() => {
@@ -40,7 +44,7 @@ function LoginPage() {
         initialValues: initialValues,
         validationSchema: SignInSchema,
         onSubmit:(values) => {
-           axios.defaults.withCredentials = true
+           axiosInstance.defaults.withCredentials = true
            axios.post(`${baseURL}/users/login`,({values}))
            .then(res => {
             if(res.data.Status === "success"){
