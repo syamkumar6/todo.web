@@ -22,6 +22,7 @@ function TodosPage() {
   const todos = useSelector((state) => state.todo.todos)
   const dispatch = useDispatch()
   const baseURL = import.meta.env.VITE_BASE_URL
+  console.log(data)
 
 
       axios.defaults.withCredentials = true
