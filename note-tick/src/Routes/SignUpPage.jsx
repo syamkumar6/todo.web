@@ -33,8 +33,7 @@ function SignUpPage() {
           }else{
               toast.error(res.data.Message)
           }
-          REACT_APP_STRIPE_KEY
-          STRIPE_KEY  "pk_test_51OAAOASFQwpcGAJ8SpwclfoIvL35iOygiV4zpqBR9iJdHlcFwcCDY4tijf1mVaSKdVfKG1wp25hEQz0tEb8Wis5c005COTxi15"
+         
          })
       }
   })
