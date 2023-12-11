@@ -14,7 +14,7 @@ app.use(cookieParses());
 app.use(express.json());
 app.use(
     cors({
-      origin: ["http://localhost:5173" , "https://notetiktodo.onrender.com"],
+      origin: ["https://note-tick-io.vercel.app"],
       methods: ["POST","GET","DELETE"],
       credentials: true,
     })
