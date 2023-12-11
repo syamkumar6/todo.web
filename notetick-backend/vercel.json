@@ -8,13 +8,6 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ],
-    "functions": {
-        "api/test.js": {
-          "maxDuration": 30
-        },
-        "api/*.js": {
-          "maxDuration": 15
-        }
-      }
+    ]
+    
 }
