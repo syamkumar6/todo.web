@@ -34,6 +34,7 @@ function LoginPage() {
                if(res.data.Status === "Verify-Success") {
                  dispatch(addAuth(true))
                  dispatch(addUser(res.data.user))
+                 navigate('/todos'); 
                }else{
                  console.log(res.data.Meassage)
                }
