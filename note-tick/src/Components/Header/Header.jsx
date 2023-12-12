@@ -13,9 +13,10 @@ function Header() {
   const navigate = useNavigate()
   const auth = useSelector((state) => state.auth.authStatus)
   const user = useSelector((state) => state.auth.user)
+  const baseURL = import.meta.env.VITE_BASE_URL
 
   const logout = () => {
-         axios.post('http://localhost:3000/users/logout')
+         axios.post(`${baseURL}/users/logout`)
         .then(res => {
             if(res.data.Status === 'Success'){
               navigate('/login')
