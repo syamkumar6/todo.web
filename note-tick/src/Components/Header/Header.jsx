@@ -16,17 +16,23 @@ function Header() {
   const baseURL = import.meta.env.VITE_BASE_URL
 
   const logout = () => {
-         axios.post(`${baseURL}/users/logout`)
-        .then(res => {
-            if(res.data.Status === 'Success'){
-              navigate('/login')
-              window.location.reload(true);
-            }
-        }).catch(err => console.log(err))
-   
-}
+    axios.post(`${baseURL}/users/logout`)
+      .then(res => {
+        if (res.data.Status === 'Success') {
+          navigate('/login');
+          window.location.reload(true);
+        } else {
+          console.error('Logout failed:', res.data);
+        }
+      })
+      .catch(err => console.error('Error during logout:', err));
+  };
         
-    
+  useEffect(() => {
+  if (auth && user) {
+    navigate('/todos');
+  }
+  }, [auth, user]);
 
   return (<div className='relative'>
     <div className={`fixed top-0 right-0 w-3/4 h-full bg-white z-40 transition-all duration-300 ${drawerVisible? 'translate-x-0': 'translate-x-full'}`} >
