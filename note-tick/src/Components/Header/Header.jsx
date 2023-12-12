@@ -20,7 +20,6 @@ function Header() {
       .then(res => {
         if (res.data.Status === 'Success') {
           navigate('/login');
-          window.location.reload(true);
         } else {
           console.error('Logout failed:', res.data);
         }
