@@ -27,19 +27,19 @@ function LoginPage() {
         timeout: 15000, 
       });
 
-     axios.defaults.withCredentials = true
-       useEffect(() => {
-           axios.post(`${baseURL}/users/verify`)
-           .then(res => {
-               if(res.data.Status === "Verify-Success") {
-                 dispatch(addAuth(true))
-                 dispatch(addUser(res.data.user))
-                 navigate('/todos'); 
-               }else{
-                 console.log(res.data.Meassage)
-               }
-           })
-       }, [])
+     // axios.defaults.withCredentials = true
+     //   useEffect(() => {
+     //       axios.post(`${baseURL}/users/verify`)
+     //       .then(res => {
+     //           if(res.data.Status === "Verify-Success") {
+     //             dispatch(addAuth(true))
+     //             dispatch(addUser(res.data.user))
+     //             navigate('/todos'); 
+     //           }else{
+     //             console.log(res.data.Meassage)
+     //           }
+     //       })
+     //   }, [])
 
     const Formik = useFormik({
         initialValues: initialValues,
