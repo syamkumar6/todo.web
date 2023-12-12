@@ -51,6 +51,7 @@ function LoginPage() {
             if(res.data.Status === "success"){
                 navigate('/todos'); 
                 toast.success("Wellcome back!")
+                resetForm();
             }else{
                 console.log(res.data.Message)
             }
