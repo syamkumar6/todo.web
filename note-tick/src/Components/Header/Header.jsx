@@ -1,6 +1,7 @@
 import  { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { addAuth } from '../../Readux/Features/AuthSlice'
 import userIcon from "../../assets/User.svg"
 import userIcon2 from "../../assets/User2.svg"
 import CloseIcon from "../../assets/NavClose.svg"
@@ -11,6 +12,7 @@ import axios from 'axios'
 function Header() {
   const [drawerVisible, setDrawerVisible] = useState(false)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const auth = useSelector((state) => state.auth.authStatus)
   const user = useSelector((state) => state.auth.user)
   const baseURL = import.meta.env.VITE_BASE_URL
@@ -19,6 +21,7 @@ function Header() {
     axios.post(`${baseURL}/users/logout`)
       .then(res => {
         if (res.data.Status === 'Success') {
+          dispatch(addAuth(false))
           navigate('/login');
         } else {
           console.error('Logout failed:', res.data);
