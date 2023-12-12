@@ -27,23 +27,24 @@ function LoginPage() {
         timeout: 15000, 
       });
 
-    // axios.defaults.withCredentials = true
-    //   useEffect(() => {
-    //       axios.post(`${baseURL}/users/verify`)
-    //       .then(res => {
-    //           if(res.data.Status === "Verify-Success") {
-    //             dispatch(addAuth(true))
-    //             dispatch(addUser(res.data.user))
-    //           }else{
-    //             alert(res.data.Meassage)
-    //           }
-    //       })
-    //   }, [])
+     axios.defaults.withCredentials = true
+       useEffect(() => {
+           axios.post(`${baseURL}/users/verify`)
+           .then(res => {
+               if(res.data.Status === "Verify-Success") {
+                 dispatch(addAuth(true))
+                 dispatch(addUser(res.data.user))
+               }else{
+                 console.log(res.data.Meassage)
+               }
+           })
+       }, [])
 
     const Formik = useFormik({
         initialValues: initialValues,
         validationSchema: SignInSchema,
         onSubmit:(values) => {
+           axios.defaults.withCredentials = true
            axios.post(`${baseURL}/users/login`,({values}), {timeout:15000})
            .then(res => {
             if(res.data.Status === "success"){
