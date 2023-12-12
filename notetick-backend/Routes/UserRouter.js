@@ -60,7 +60,7 @@ router.post('/verify', Verify, (req, res, next) => {
     return res.status(200).json({ Status: "Verify-Success", user: req.user });
 })
 
-router.get('/logout', Verify, (req, res) => {
+router.post('/logout', Verify, (req, res) => {
       res.cookie('token',"",{expiresIn:new Date(0)})
       return res.status(200).json({ Status: "Success" });
  
