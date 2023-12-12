@@ -16,11 +16,10 @@ function Header() {
   const baseURL = import.meta.env.VITE_BASE_URL
 
   const logout = () => {
-         axios.post(`${baseURL}/users/logout`)
+         axios.get(`${baseURL}/users/logout`)
         .then(res => {
             if(res.data.Status === 'Success'){
               navigate('/login')
-              window.location.reload(true);
             }
         }).catch(err => console.log(err))
    
